@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+</head>
+<style>
+    #map {
+        width: 100%;
+        height: 580px;
+        box-shadow: 5px 5px 5px #888;
+    }
+</style>
+
+<body>
+    <div id='map'>
+    </div>
+    <script>
+        var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
+                    + 'contributors', maxZoom: 18
+            });
+            var map = L.map('map', {
+                center: [1.615692, -75.615549],
+                zoom: 13,
+                layers: osm,
+                scrollWheelZoom: true,
+            });
+            L.control.scale().addTo(map);
+
+        var myIcon = L.icon({
+            iconUrl: 'https://chaira.uniamazonia.edu.co/inicio/images/banners/2020/UA-01.png',
+            iconSize: [20, 20],
+            popupAnchor: [-1, -10]
+        });
+
+        var myIcon2 = L.icon({
+            iconUrl: 'https://esacademic.com/pictures/eswiki/69/Escudo_Florencia_Caquet%C3%A1.jpg',
+            iconSize: [20, 30],
+            popupAnchor: [-1, -10]
+        });
+
+        var marker2 = L.marker([1.619816, -75.604029], { icon: myIcon })
+            .addTo(map)
+            .bindPopup("Localización de <b>Universidad de la Amazonia</b>");
+
+
+
+        var marker3 = L.marker([1.6150472, -75.61386944444443], { icon: myIcon2 })
+            .addTo(map)
+            .bindPopup("Localización de <b>Alcaldía</b>");
+
+
+        var circle = L.circle([1.6147386, -75.6136702], 500, {
+            color: 'red',
+            fillColor: '#f03',
+            fillOpacity: 0.5
+        }).addTo(map)
+            ;
+
+
+        var polygon = L.polygon([
+            [1.615175, -75.61366083333333],
+            [1.6153667, -75.61305555555555],
+            [1.6146972, -75.61285277777777],
+            [1.6145333, -75.61346388888889]
+        ]).addTo(map)
+            .bindPopup('Parque Francisco de Paula Santander');
+
+        
+        var point1 = new L.LatLng(1.6354222, -75.61510277777778);
+        var point2 = new L.LatLng(1.6359611, -75.61512499999999);
+        var point3 = new L.LatLng(1.6360056, -75.61478333333332);
+        var point4 = new L.LatLng(1.6366639, -75.61485833333333);
+        var point5 = new L.LatLng(1.6371556, -75.61484722222221);
+        var point6 = new L.LatLng(1.6375944, -75.61443888888888);
+        var point7 = new L.LatLng(1.6377667, -75.61141111111111);
+        var point8 = new L.LatLng(1.6376417, -75.61060277777777);
+        var point9 = new L.LatLng(1.6372083, -75.6095611111111);
+        var point10 = new L.LatLng(1.6366639, -75.60889166666666);
+        var point11 = new L.LatLng(1.6299667, -75.60262777777777);
+        var point12 = new L.LatLng(1.6295167, -75.60226666666667);
+        var point13 = new L.LatLng(1.6291528, -75.60211944444444);
+        var point14 = new L.LatLng(1.6278639, -75.60238888888888);
+        var point15 = new L.LatLng(1.627375, -75.6025111111111);
+        var point16 = new L.LatLng(1.6260028, -75.6035611111111);
+        var point17 = new L.LatLng(1.6256333, -75.60382777777777);
+        var point18 = new L.LatLng(1.6251722, -75.60445277777777);
+        var point19 = new L.LatLng(1.6248083, -75.60569444444444);
+        var point20 = new L.LatLng(1.6237778, -75.60638333333333);
+        var point21 = new L.LatLng(1.6230833, -75.60747777777777);
+        var point22 = new L.LatLng(1.6220028, -75.60788055555555);
+        var point23 = new L.LatLng(1.6211778, -75.60861666666666);
+        var point24 = new L.LatLng(1.6208361, -75.60969444444444);
+        var point25 = new L.LatLng(1.6207583, -75.61012222222222);
+        var point26 = new L.LatLng(1.62055, -75.61017777777778);
+        var point27 = new L.LatLng(1.6204, -75.60996666666666);
+        var point28 = new L.LatLng(1.6203389, -75.60965277777777);
+        var point29 = new L.LatLng(1.6193806, -75.60696944444445);
+        var point30 = new L.LatLng(1.6175028, -75.60566388888888);
+        var point31 = new L.LatLng(1.6175778, -75.60555555555555);
+        var point32 = new L.LatLng(1.6188667, -75.60644722222222);
+        var point33 = new L.LatLng(1.6201306, -75.60519444444444);
+        var latlngs = [
+            point1,
+            point2,
+            point3,
+            point4,
+            point5,
+            point6,
+            point7,
+            point8,
+            point9,
+            point10,
+            point12,
+            point13,
+            point14,
+            point15,
+            point16,
+            point17,
+            point18,
+            point19,
+            point20,
+            point21,
+            point22,
+            point23,
+            point24,
+            point25,
+            point26,
+            point27,
+            point28,
+            point29,
+            point30,
+            point31,
+            point32,
+            point33,
+        ];
+        var polyline = L.polyline(
+            latlngs, { color: 'black' }
+        ).addTo(map)
+        .bindPopup('Casa de Oscar - Uniamazonia');
+
+    </script>
+</body>
+</script>
+
+</html>
